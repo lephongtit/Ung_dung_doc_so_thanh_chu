@@ -2,13 +2,13 @@ import java.util.Scanner;
 
 public class Ung_dung_doc_so_thanh_chu {
     public static void main(String[] args) {
-        Scanner sr= new Scanner(System.in);
+        Scanner sr = new Scanner(System.in);
         System.out.println("Enter number: ");
-        int number= sr.nextInt();
-        if (number < 0 || number > 999){
+        int number = sr.nextInt();
+        if (number < 0 || number > 200) {
             System.out.println("Out of ability");
-        } else if (number >= 0 && number <=20){
-            switch (number){
+        } else if (number >= 0 && number <= 10) {
+            switch (number) {
                 case 0:
                     System.out.println("Zero");
                     break;
@@ -43,9 +43,11 @@ public class Ung_dung_doc_so_thanh_chu {
                     System.out.println("Ten");
                     break;
             }
-        } else if (number > 10 && number < 20){
+
+
+        } else if (number > 10 && number < 20) {
             int ones = number % 10;
-            switch (ones){
+            switch (ones) {
                 case 1:
                     System.out.println("Eleven");
                     break;
@@ -74,12 +76,15 @@ public class Ung_dung_doc_so_thanh_chu {
                     System.out.println("Nineteen");
                     break;
             }
-        } else if (number >= 20 && number <=99){
+
+
+        } else if (number >= 20 && number <= 99) {
             int ones = number % 10;
             int tens = (number - ones) / 10;
-            String str= "";
+            String str = "";
 
-            switch (tens){
+            switch (tens) {
+
                 case 2:
                     str += "Twenty ";
                     break;
@@ -106,7 +111,7 @@ public class Ung_dung_doc_so_thanh_chu {
                     break;
             }
 
-            switch (ones){
+            switch (ones) {
                 case 0:
                     str += "zero";
                     break;
@@ -140,6 +145,8 @@ public class Ung_dung_doc_so_thanh_chu {
             }
 
             System.out.println(str);
+
+
         } else {
             int ones = number % 10;
             int tens = (number - ones) / 10 % 10;
@@ -147,7 +154,7 @@ public class Ung_dung_doc_so_thanh_chu {
 
             String str = "";
 
-            switch (hundreds){
+            switch (hundreds) {
                 case 1:
                     str += "One";
                     break;
@@ -179,7 +186,40 @@ public class Ung_dung_doc_so_thanh_chu {
 
             str += " hundred ";
 
-            switch (tens){
+            switch (tens) {
+                case 1:
+                    int ones1 = number % 10;
+                    switch (ones1) {
+                        case 1:
+                            str+="Eleven";
+                            break;
+                        case 2:
+                            str+=("Twelfth");
+                            break;
+                        case 3:
+                            str+=("Thirteen");
+                            break;
+                        case 4:
+                            str+=("Fourteen");
+                            break;
+                        case 5:
+                            str+=("Fiveteen");
+                            break;
+                        case 6:
+                            str+=("Sixteen");
+                            break;
+                        case 7:
+                            str+=("Seventeen");
+                            break;
+                        case 8:
+                            str+=("Eighteen");
+                            break;
+                        case 9:
+                            str+=("Nineteen");
+                            break;
+                    }break;
+
+
                 case 2:
                     str += "twenty ";
                     break;
@@ -206,39 +246,40 @@ public class Ung_dung_doc_so_thanh_chu {
                     break;
             }
 
-            switch (ones){
-                case 0:
-                    str += "zero";
-                    break;
-                case 1:
-                    str += "one";
-                    break;
-                case 2:
-                    str += "two";
-                    break;
-                case 3:
-                    str += "three";
-                    break;
-                case 4:
-                    str += "four";
-                    break;
-                case 5:
-                    str += "five";
-                    break;
-                case 6:
-                    str += "six";
-                    break;
-                case 7:
-                    str += "seven";
-                    break;
-                case 8:
-                    str += "eight";
-                    break;
-                case 9:
-                    str += "nine";
-                    break;
+            if (tens != 1) {
+                switch (ones) {
+                    case 0:
+                        str += "zero";
+                        break;
+                    case 1:
+                        str += "one";
+                        break;
+                    case 2:
+                        str += "two";
+                        break;
+                    case 3:
+                        str += "three";
+                        break;
+                    case 4:
+                        str += "four";
+                        break;
+                    case 5:
+                        str += "five";
+                        break;
+                    case 6:
+                        str += "six";
+                        break;
+                    case 7:
+                        str += "seven";
+                        break;
+                    case 8:
+                        str += "eight";
+                        break;
+                    case 9:
+                        str += "nine";
+                        break;
+                }
             }
-
             System.out.println(str);
         }
 
